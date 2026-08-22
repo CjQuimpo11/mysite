@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Question ❤️</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff0f5;font-family:Arial,sans-serif;padding:20px;color:#333}
+    .card{width:min(560px,100%);background:#ffffff;border-radius:20px;padding:28px;box-shadow:0 12px 30px rgba(0,0,0,0.08);text-align:center}
+    h1{font-size:36px;margin:8px 0;color:#e63946}
+    p{font-size:17px;line-height:1.55;color:#555}
+    .panel{display:none;text-align:left;background:#fff8fa;border:1px solid #ffd6e0;border-radius:14px;padding:18px;margin-top:20px}
+    .field{margin:15px 0}
+    .field label{display:block;font-weight:700;margin-bottom:6px;font-size:14px}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px}
+    textarea{min-height:80px;resize:vertical}
+    .btn-group{display:flex;gap:12px;justify-content:center;margin-top:20px}
+    button{padding:12px 24px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:0.2s}
+    .btn-yes{background:#e63946;color:#fff}
+    .btn-submit{background:#2a9d8f;color:#fff;width:100%;margin-top:10px}
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Will you go out with me? ❤️</h1>
+    <p>I set up this little page just to ask you out on a date!</p>
+
+    <div class="btn-group" id="initial-btns">
+      <button class="btn-yes" onclick="showForm()">Yes! 🥰</button>
+    </div>
+
+    <form class="panel" id="date-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+      <input type="hidden" name="subject" value="New Date Response! ❤️">
+      <input type="hidden" name="to_email" value="cliffordquimpoiii@gmail.com">
+
+      <div class="field">
+        <label>Preferred Date & Time</label>
+        <input type="datetime-local" name="preferred_date" required>
+      </div>
+
+      <div class="field">
+        <label>What kind of food are you craving?</label>
+        <input type="text" name="food_craving" placeholder="e.g. Italian, Sushi, Coffee..." required>
+      </div>
+
+      <div class="field">
+        <label>Any specific place in mind?</label>
+        <textarea name="location_ideas" placeholder="Tell me your favorite spots..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Send Response 💕</button>
+    </form>
+  </div>
+
+  <script>
+    function showForm() {
+      document.getElementById('date-form').style.display = 'block';
+      document.getElementById('initial-btns').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
