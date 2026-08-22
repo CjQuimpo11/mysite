@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Little Question ❤️</title>
+  <title>A Special Question for You ❤️</title>
   <style>
     *{box-sizing:border-box}
     body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff0f5;font-family:Arial,sans-serif;padding:20px;color:#333}
     .card{width:min(560px,100%);background:#ffffff;border-radius:20px;padding:28px;box-shadow:0 12px 30px rgba(0,0,0,0.08);text-align:center}
-    h1{font-size:36px;margin:8px 0;color:#e63946}
-    p{font-size:17px;line-height:1.55;color:#555}
+    h1{font-size:32px;margin:8px 0;color:#e63946}
+    p{font-size:16px;line-height:1.55;color:#555}
     .panel{display:none;text-align:left;background:#fff8fa;border:1px solid #ffd6e0;border-radius:14px;padding:18px;margin-top:20px}
     .field{margin:15px 0}
-    .field label{display:block;font-weight:700;margin-bottom:6px;font-size:14px}
+    .field label{display:block;font-weight:700;margin-bottom:6px;font-size:14px;color:#444}
     input,select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px}
     textarea{min-height:80px;resize:vertical}
     .btn-group{display:flex;gap:12px;justify-content:center;margin-top:20px}
@@ -24,31 +24,76 @@
 <body>
 
   <div class="card">
-    <h1>Will you go out with me? ❤️</h1>
-    <p>I set up this little page just to ask you out on a date!</p>
+    <h1>Will you go on a date with me? ❤️</h1>
+    <p>I put this together just for you. Ready to plan our perfect day (and night)? 😏✨</p>
 
     <div class="btn-group" id="initial-btns">
-      <button class="btn-yes" onclick="showForm()">Yes! 🥰</button>
+      <button class="btn-yes" onclick="showForm()">Yes, absolutely! 🥰</button>
     </div>
 
     <form class="panel" id="date-form" action="https://api.web3forms.com/submit" method="POST">
       <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-      <input type="hidden" name="subject" value="New Date Response! ❤️">
+      <input type="hidden" name="subject" value="New Date Response! ❤️🔥">
       <input type="hidden" name="to_email" value="cliffordquimpoiii@gmail.com">
 
       <div class="field">
-        <label>Preferred Date & Time</label>
-        <input type="datetime-local" name="preferred_date" required>
+        <label>Preferred Date 📅</label>
+        <input type="date" name="preferred_date" required>
       </div>
 
       <div class="field">
-        <label>What kind of food are you craving?</label>
+        <label>What time should I pick you up? ⏰</label>
+        <input type="time" name="preferred_time" required>
+      </div>
+
+      <div class="field">
+        <label>What kind of food are you craving? 🍝 sushi</label>
         <input type="text" name="food_craving" placeholder="e.g. Italian, Sushi, Coffee..." required>
       </div>
 
       <div class="field">
-        <label>Any specific place in mind?</label>
-        <textarea name="location_ideas" placeholder="Tell me your favorite spots..."></textarea>
+        <label>Any specific place in mind? 🍷</label>
+        <textarea name="location_ideas" placeholder="Tell me your favorite spots or ideas..."></textarea>
+      </div>
+
+      <div class="field">
+        <label>What sweet treat or dessert are you craving most? 🍦💋</label>
+        <input type="text" name="dessert_craving" placeholder="e.g. Ice cream, chocolate, or you..." required>
+      </div>
+
+      <div class="field">
+        <label>How should we end the night? 🌙</label>
+        <select name="night_ending" required>
+          <option value="" disabled selected>Choose your vibe...</option>
+          <option value="Cuddles & Movies">Sweet cuddles & late-night movies 🍿</option>
+          <option value="Late Night Drive">A romantic late-night drive 🚗✨</option>
+          <option value="Straight to Bed">Heading straight to the bedroom 😈🔥</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>Do you want to be naughty in bed? 😈</label>
+        <select name="naughty_in_bed" required>
+          <option value="" disabled selected>Select an option...</option>
+          <option value="Yes">Yes, definitely 😈</option>
+          <option value="Maybe">Maybe if you treat me right 😏</option>
+          <option value="No">No, keeping it sweet 😇</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label>What position do you prefer? 🫦</label>
+        <input type="text" name="preferred_position" placeholder="Your favorite position..." required>
+      </div>
+
+      <div class="field">
+        <label>How many rounds are we going? 💥</label>
+        <input type="number" name="rounds" min="1" max="10" placeholder="e.g. 1, 2, 3..." required>
+      </div>
+
+      <div class="field">
+        <label>One secret or naughty desire for the night? 🤫</label>
+        <textarea name="secret_desire" placeholder="Tell me what you really want..."></textarea>
       </div>
 
       <button type="submit" class="btn-submit">Send Response 💕</button>
