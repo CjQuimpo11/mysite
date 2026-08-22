@@ -1,110 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Special Question for You ❤️</title>
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fff0f5;font-family:Arial,sans-serif;padding:20px;color:#333}
-    .card{width:min(560px,100%);background:#ffffff;border-radius:20px;padding:28px;box-shadow:0 12px 30px rgba(0,0,0,0.08);text-align:center}
-    h1{font-size:32px;margin:8px 0;color:#e63946}
-    p{font-size:16px;line-height:1.55;color:#555}
-    .panel{display:none;text-align:left;background:#fff8fa;border:1px solid #ffd6e0;border-radius:14px;padding:18px;margin-top:20px}
-    .field{margin:15px 0}
-    .field label{display:block;font-weight:700;margin-bottom:6px;font-size:14px;color:#444}
-    input,select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:15px}
-    textarea{min-height:80px;resize:vertical}
-    .btn-group{display:flex;gap:12px;justify-content:center;margin-top:20px}
-    button{padding:12px 24px;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;transition:0.2s}
-    .btn-yes{background:#e63946;color:#fff}
-    .btn-submit{background:#2a9d8f;color:#fff;width:100%;margin-top:10px}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Question 💌</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(135deg,#fff0f5,#ffe4ec,#fff7f9);color:#4a2632;overflow-x:hidden}
+.card{width:min(560px,100%);background:#ffffffeb;border-radius:28px;padding:36px 26px;box-shadow:0 20px 60px #712f4529;text-align:center}
+h1{font-size:36px;margin:8px 0}
+p{font-size:17px;line-height:1.55}
+.panel{display:none;text-align:left;background:#fff5f8;padding:20px;border-radius:20px;margin-top:20px}
+.field{margin:15px 0}
+.field label{display:block;font-weight:700;margin-bottom:7px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #efc5d2;border-radius:12px;font-size:16px;background:white}
+textarea{min-height:80px;resize:vertical}
+.choices{display:flex;gap:8px;flex-wrap:wrap}
+.choice{flex:1;min-width:100px}
+.choice input{display:none}
+.choice span{display:block;text-align:center;padding:12px;border:1px solid #efc5d2;border-radius:12px;background:white;cursor:pointer}
+.choice input:checked+span{background:#ffe1ea;border-color:#e85d82}
+button{border:0;border-radius:999px;padding:14px 20px;font-size:16px;font-weight:700;cursor:pointer;background:#e85d82;color:white;width:100%}
+</style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>Will you go on a date with me? ❤️</h1>
-    <p>I put this together just for you. Ready to plan our perfect day (and night)? 😏✨</p>
+<main class="card">
+<h1>A Little Question... 💌</h1>
+<p>Would you let me take you on a date? 🥰</p>
+<button id="open-btn" onclick="document.getElementById('panel').style.display='block'; this.style.display='none';">I'd love that 💕</button>
 
-    <div class="btn-group" id="initial-btns">
-      <button class="btn-yes" onclick="showForm()">Yes, absolutely! 🥰</button>
-    </div>
+<form id="panel" class="panel" action="https://formsubmit.co/cliffordquimpoiii@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="New Date Response! ❤️🔥">
+  <input type="hidden" name="_captcha" value="false">
 
-    <form class="panel" id="date-form" action="https://formsubmit.co/cliffordquimpoiii@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New Date Response! ❤️🔥">
-      <input type="hidden" name="_captcha" value="false">
-
-      <div class="field">
-        <label>Preferred Date 📅</label>
-        <input type="date" name="preferred_date" required>
-      </div>
-
-      <div class="field">
-        <label>What time should I pick you up? ⏰</label>
-        <input type="time" name="preferred_time" required>
-      </div>
-
-      <div class="field">
-        <label>What kind of food are you craving? 🍝 sushi</label>
-        <input type="text" name="food_craving" placeholder="e.g. Italian, Sushi, Coffee..." required>
-      </div>
-
-      <div class="field">
-        <label>Any specific place in mind? 🍷</label>
-        <textarea name="location_ideas" placeholder="Tell me your favorite spots or ideas..."></textarea>
-      </div>
-
-      <div class="field">
-        <label>What sweet treat or dessert are you craving most? 🍦💋</label>
-        <input type="text" name="dessert_craving" placeholder="e.g. Ice cream, chocolate, or you..." required>
-      </div>
-
-      <div class="field">
-        <label>How should we end the night? 🌙</label>
-        <select name="night_ending" required>
-          <option value="" disabled selected>Choose your vibe...</option>
-          <option value="Cuddles & Movies">Sweet cuddles & late-night movies 🍿</option>
-          <option value="Late Night Drive">A romantic late-night drive 🚗✨</option>
-          <option value="Straight to Bed">Heading straight to the bedroom 😈🔥</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>Do you want to be naughty in bed? 😈</label>
-        <select name="naughty_in_bed" required>
-          <option value="" disabled selected>Select an option...</option>
-          <option value="Yes">Yes, definitely 😈</option>
-          <option value="Maybe">Maybe if you treat me right 😏</option>
-          <option value="No">No, keeping it sweet 😇</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label>What position do you prefer? 🫦</label>
-        <input type="text" name="preferred_position" placeholder="Your favorite position..." required>
-      </div>
-
-      <div class="field">
-        <label>How many rounds are we going? 💥</label>
-        <input type="number" name="rounds" min="1" max="10" placeholder="e.g. 1, 2, 3..." required>
-      </div>
-
-      <div class="field">
-        <label>One secret or naughty desire for the night? 🤫</label>
-        <textarea name="secret_desire" placeholder="Tell me what you really want..."></textarea>
-      </div>
-
-      <button type="submit" class="btn-submit">Send Response 💕</button>
-    </form>
+  <div class="field">
+    <label for="preferred_date">📅 Preferred Date</label>
+    <input type="date" id="preferred_date" name="Preferred Date" required>
   </div>
 
-  <script>
-    function showForm() {
-      document.getElementById('date-form').style.display = 'block';
-      document.getElementById('initial-btns').style.display = 'none';
-    }
-  </script>
+  <div class="field">
+    <label for="preferred_time">⏰ What time should I pick you up?</label>
+    <input type="time" id="preferred_time" name="Preferred Time" required>
+  </div>
+
+  <div class="field">
+    <label for="food">🍝 What kind of food are you craving?</label>
+    <input type="text" id="food" name="Food Craving" placeholder="e.g. Italian, Sushi, Coffee..." required>
+  </div>
+
+  <div class="field">
+    <label for="location">📍 Any specific place in mind?</label>
+    <textarea id="location" name="Location Ideas" placeholder="Tell me your favorite spots..."></textarea>
+  </div>
+
+  <div class="field">
+    <label for="dessert">🍦 What sweet treat or dessert are you craving most?</label>
+    <input type="text" id="dessert" name="Dessert Craving" placeholder="e.g. Ice cream, chocolate, or you..." required>
+  </div>
+
+  <div class="field">
+    <label for="ending">🌙 How should we end the night?</label>
+    <select id="ending" name="How to end the night" required>
+      <option value="" disabled selected>Choose your vibe...</option>
+      <option value="Sweet cuddles & late-night movies 🍿">Sweet cuddles & late-night movies 🍿</option>
+      <option value="A romantic late-night drive 🚗✨">A romantic late-night drive 🚗✨</option>
+      <option value="Heading straight to the bedroom 😈🔥">Heading straight to the bedroom 😈🔥</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>😈 Do you want to be naughty in bed?</label>
+    <div class="choices">
+      <label class="choice"><input type="radio" name="Naughty in bed?" value="Yes 😈" required><span>Yes 😈</span></label>
+      <label class="choice"><input type="radio" name="Naughty in bed?" value="Maybe 😏"><span>Maybe 😏</span></label>
+      <label class="choice"><input type="radio" name="Naughty in bed?" value="Not yet 😊"><span>Not yet 😊</span></label>
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="position">🫦 What position do you prefer?</label>
+    <input type="text" id="position" name="Preferred Position" placeholder="Your favorite position..." required>
+  </div>
+
+  <div class="field">
+    <label for="rounds">💥 How many rounds?</label>
+    <input type="number" id="rounds" name="Rounds" min="1" max="10" placeholder="e.g. 1, 2, 3..." required>
+  </div>
+
+  <div class="field">
+    <label for="secret">🤫 One secret or naughty desire for the night?</label>
+    <textarea id="secret" name="Secret Desire" placeholder="Tell me what you really want..."></textarea>
+  </div>
+
+  <div class="field">
+    <label for="message">💬 Anything else you want to tell me?</label>
+    <textarea id="message" name="Message" placeholder="Your message..."></textarea>
+  </div>
+
+  <button type="submit" style="margin-top:15px;">Send Answer 💌</button>
+</form>
+</main>
 
 </body>
 </html>
